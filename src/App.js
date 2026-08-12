@@ -10,8 +10,8 @@ import Projects from './components/projects/Projects';
 import Experience from './components/experience/Experience';
 import './app.css';
 
-// Import social media icons from react-icons
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube, FaTelegram, FaGithub } from 'react-icons/fa';
+// Import social media icons from react-icons (removed Twitter, LinkedIn, Telegram)
+import { FaFacebook, FaInstagram, FaYoutube, FaGithub } from 'react-icons/fa';
 
 // Contact Component with Formspree Integration
 function Contact() {
@@ -23,8 +23,8 @@ function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Formspree endpoint - Updated with your actual Formspree link
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mjgarqnj'; // ✅ Your Formspree endpoint
+  // Formspree endpoint
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mjgarqnj';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,7 +61,6 @@ function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Send data to Formspree
       const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: {
@@ -73,8 +72,8 @@ function Contact() {
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          _replyto: formData.email, // Formspree will use this for reply-to
-          _subject: `Portfolio Contact: ${formData.subject}` // Custom email subject
+          _replyto: formData.email,
+          _subject: `Portfolio Contact: ${formData.subject}`
         }),
       });
 
@@ -94,7 +93,6 @@ function Contact() {
           },
         });
         
-        // Reset form
         setFormData({ 
           name: '', 
           email: '', 
@@ -102,10 +100,8 @@ function Contact() {
           message: '' 
         });
         
-        // Also reset the form element
         e.target.reset();
       } else {
-        // Handle Formspree specific errors
         if (result.errors) {
           const errorMessages = result.errors.map(error => error.message).join(', ');
           throw new Error(errorMessages);
@@ -116,13 +112,11 @@ function Contact() {
     } catch (error) {
       console.error('Error sending message:', error);
       
-      // Show specific error message
       toast.error(error.message || 'Failed to send message. Please try again or email directly.', {
         duration: 5000,
         position: 'top-right',
       });
       
-      // Fallback - Open email client after a short delay
       setTimeout(() => {
         const subject = encodeURIComponent(formData.subject || 'Portfolio Contact');
         const body = encodeURIComponent(
@@ -174,7 +168,6 @@ function Contact() {
   return (
     <div className="contact-section" id="contact">
       <div className="contact-container">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -192,7 +185,6 @@ function Contact() {
         </motion.div>
 
         <div className="contact-grid">
-          {/* Contact Info Column */}
           <div className="contact-info-column">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -232,7 +224,6 @@ function Contact() {
               ))}
             </motion.div>
 
-            {/* Availability Status */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -264,7 +255,6 @@ function Contact() {
               </div>
             </motion.div>
 
-            {/* Direct Contact Options */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -289,7 +279,6 @@ function Contact() {
             </motion.div>
           </div>
 
-          {/* Contact Form Column */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -375,7 +364,6 @@ function Contact() {
                   />
                 </div>
 
-                {/* Honeypot field for spam prevention (invisible to users) */}
                 <input 
                   type="text" 
                   name="_gotcha" 
@@ -413,7 +401,6 @@ function Contact() {
               </form>
             </div>
 
-            {/* Form Security Info */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -435,7 +422,6 @@ function Contact() {
               </div>
             </motion.div>
 
-            {/* Response Time Info */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -475,6 +461,7 @@ function App() {
     }
   };
 
+  // Social links - Twitter removed
   const socialLinks = [
     {
       name: 'Facebook',
@@ -482,8 +469,6 @@ function App() {
       url: 'https://facebook.com',
       color: '#1877F2'
     },
- 
-  
     {
       name: 'Instagram',
       icon: <FaInstagram />,
@@ -496,7 +481,6 @@ function App() {
       url: 'https://www.youtube.com/@Moneyspeaks12',
       color: '#FF0000'
     },
-  
     {
       name: 'GitHub',
       icon: <FaGithub />,

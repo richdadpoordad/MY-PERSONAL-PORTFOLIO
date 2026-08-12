@@ -132,7 +132,7 @@ function Header({ scrollToSection }) {
 
                 <div className="mobile-actions">
                   <motion.a
-                    href="resume"
+                    href="/resume.pdf"
                     download="Melese_Muche_Resume.pdf"
                     whileTap={{ scale: 0.98 }}
                     className="mobile-action-button mobile-download-button"
@@ -213,8 +213,8 @@ function Header({ scrollToSection }) {
               </motion.button>
 
               <motion.a
-                href="/Chapter.pdf"
-                download="Chapter.pdf"
+                href="/resume.pdf"
+                download="Melese_Muche_Resume.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="action-button resume-button"

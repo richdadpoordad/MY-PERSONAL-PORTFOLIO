@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
 import './Home.css';
-
-// Import the image
-import backgroundImage from '../../assets/images/imagede.jfif';
 
 const Home = () => {
   const [isTextVisible, setIsTextVisible] = useState(true);
@@ -33,7 +29,10 @@ const Home = () => {
       <div 
         className="background-image-container"
         style={{
-          backgroundImage: `url(${backgroundImage})`,
+          backgroundImage: `url('/images/imagedev.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         }}
       >
         {/* Dark overlay for text readability */}
@@ -69,8 +68,7 @@ const Home = () => {
                 transition={{ delay: 0.4, type: "spring" }}
                 className="main-name"
               >
-                <span className="first-name">Melese  Muche</span>
-               
+                <span className="first-name">Melese Muche</span>
               </motion.h1>
 
               <motion.p
@@ -90,11 +88,8 @@ const Home = () => {
                 transition={{ delay: 0.8 }}
                 className="tagline"
               >
-                First learn fullstack appliction development and 
+                First learn fullstack application development and 
                 Learn AI powered fullstack Application development and to become an AI developer
-            
-    
-
               </motion.p>
             </div>
           </motion.div>
@@ -110,7 +105,7 @@ const Home = () => {
         onClick={toggleTextVisibility}
         aria-label={isTextVisible ? "Hide text" : "Show text"}
       >
-        
+        <span>{isTextVisible ? 'Hide' : 'Show'}</span>
       </motion.button>
 
       {/* Scroll Indicator */}
@@ -133,8 +128,7 @@ const Home = () => {
             }
           }}
         >
-          
-         
+          <span>↓</span>
         </motion.div>
       </motion.div>
     </section>

@@ -3,9 +3,6 @@ import { motion } from 'framer-motion';
 import { User, MapPin, Calendar, GraduationCap, Briefcase, Award } from 'lucide-react';
 import './about.css';
 
-// Import your image - try different paths if needed
-import profileImage from '../../assets/images/image.l.webp';// Changed from './' to '../'
-
 const About = () => {
   const stats = [
     { icon: <Briefcase />, value: '3+', label: 'Years Experience' },
@@ -14,7 +11,7 @@ const About = () => {
     { icon: <GraduationCap />, value: '5+', label: 'Certifications' },
   ];
 
-  const skills = ['React', 'TypeScript', 'Node.js', 'Next.js', 'Tailwind CSS', 'MongoDB', 'AWS', 'Git','postgresql'];
+  const skills = ['React', 'TypeScript', 'Node.js', 'Next.js', 'Tailwind CSS', 'MongoDB', 'AWS', 'Git', 'PostgreSQL'];
 
   return (
     <section className="about-section" id="about">
@@ -47,14 +44,13 @@ const About = () => {
             <div className="profile-image-container">
               <div className="profile-image-wrapper">
                 <div className="profile-placeholder">
-                  {/* Image with fallback */}
                   <img 
-                    src={profileImage || "https://via.placeholder.com/400x400"} 
+                    src="/images/image.l.webp"
                     alt="Melese Muche"
                     className="profile-image"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = "https://via.placeholder.com/400x400";
+                      e.target.src = "https://via.placeholder.com/400x400/2d3436/ffffff?text=Melese+Muche";
                     }}
                   />
                 </div>
