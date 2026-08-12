@@ -34,8 +34,7 @@ const Skills = () => {
       skills: [
         { name: 'Figma', level: 85 },
         { name: 'Adobe XD', level: 80 },
-        { name: 'Prototyping', level: 90 },
-        { name: 'Wireframing', level: 85 },
+       
       ]
     },
     {
@@ -45,7 +44,6 @@ const Skills = () => {
       skills: [
         { name: 'AWS', level: 75 },
         { name: 'Docker', level: 80 },
-        { name: 'CI/CD', level: 85 },
         { name: 'Git', level: 95 },
       ]
     },
@@ -56,7 +54,6 @@ const Skills = () => {
       skills: [
         { name: 'React Native', level: 85 },
         { name: 'Flutter', level: 70 },
-        { name: 'iOS', level: 65 },
         { name: 'Android', level: 70 },
       ]
     },

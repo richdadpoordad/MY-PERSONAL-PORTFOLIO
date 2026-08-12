@@ -482,18 +482,8 @@ function App() {
       url: 'https://facebook.com',
       color: '#1877F2'
     },
-    {
-      name: 'Twitter',
-      icon: <FaTwitter />,
-      url: 'https://twitter.com',
-      color: '#1DA1F2'
-    },
-    {
-      name: 'LinkedIn',
-      icon: <FaLinkedin />,
-      url: 'https://linkedin.com',
-      color: '#0077B5'
-    },
+ 
+  
     {
       name: 'Instagram',
       icon: <FaInstagram />,
@@ -503,19 +493,14 @@ function App() {
     {
       name: 'YouTube',
       icon: <FaYoutube />,
-      url: 'https://www.youtube.com/channel/UCoYVAMNTlVt04NbrbYZ9bAw',
+      url: 'https://www.youtube.com/@Moneyspeaks12',
       color: '#FF0000'
     },
-    {
-      name: 'Telegram',
-      icon: <FaTelegram />,
-      url: 'https://t.me/Startlearnsoftware',
-      color: '#0088CC'
-    },
+  
     {
       name: 'GitHub',
       icon: <FaGithub />,
-      url: 'https://github.com',
+      url: 'https://github.com/richdadpoordad',
       color: '#333333'
     }
   ];

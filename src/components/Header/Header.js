@@ -2,18 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, X, Mail, Download, Sun, Moon, 
+  Menu, X, Mail, Download, 
   Home, User, Briefcase, Star, Award,  
 } from 'lucide-react';
 import './Header.css';
 
-// IMPORT YOUR RESUME FROM ASSETS FOLDER
-// This links to your PDF
-
 function Header({ scrollToSection }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,47 +32,6 @@ function Header({ scrollToSection }) {
     { label: 'Experience', id: 'experience' },
     { label: 'Contact', id: 'contact' },
   ];
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => {
-      const newTheme = prevTheme === 'dark' ? 'light' : 'dark';
-      document.body.classList.toggle('dark-theme', newTheme === 'dark');
-      return newTheme;
-    });
-  };
-
-  const ThemeToggle = () => (
-    <motion.button
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      onClick={toggleTheme}
-      className="theme-toggle"
-      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-      aria-pressed={theme === 'dark'}
-    >
-      <motion.div
-        className="theme-toggle-container"
-        animate={{
-          backgroundColor: theme === 'dark' ? '#4a5568' : '#fbbf24'
-        }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="theme-toggle-track">
-          <motion.div
-            className="theme-toggle-thumb"
-            animate={{ x: theme === 'dark' ? 24 : 0 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          >
-            {theme === 'dark' ? (
-              <Moon size={12} className="theme-icon theme-icon-dark" />
-            ) : (
-              <Sun size={12} className="theme-icon theme-icon-light" />
-            )}
-          </motion.div>
-        </div>
-      </motion.div>
-    </motion.button>
-  );
 
   const DesktopNav = () => (
     <nav className="nav-desktop" aria-label="Main navigation">
@@ -176,7 +131,6 @@ function Header({ scrollToSection }) {
                 </nav>
 
                 <div className="mobile-actions">
-                  {/* MOBILE DOWNLOAD BUTTON - CORRECTED */}
                   <motion.a
                     href="resume"
                     download="Melese_Muche_Resume.pdf"
@@ -247,8 +201,6 @@ function Header({ scrollToSection }) {
 
             {/* Right Side Actions */}
             <div className="header-actions">
-              <ThemeToggle />
-              
               <motion.button
                 onClick={() => scrollToSection('contact')}
                 whileHover={{ scale: 1.05 }}
@@ -260,19 +212,19 @@ function Header({ scrollToSection }) {
                 Hire Me
               </motion.button>
 
-              {/* DESKTOP DOWNLOAD BUTTON - CORRECTED */}
               <motion.a
-                    href="/Chapter.pdf"  // ← Direct path to public folder
-                    download="Chapter.pdf"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="action-button resume-button"
-                    aria-label="Download resume"
-                  >
-                    <Download size={18} className="button-icon" />
-                    Resume
-             </motion.a> 
-                                <motion.button
+                href="/Chapter.pdf"
+                download="Chapter.pdf"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="action-button resume-button"
+                aria-label="Download resume"
+              >
+                <Download size={18} className="button-icon" />
+                Resume
+              </motion.a>
+
+              <motion.button
                 whileTap={{ scale: 0.95 }}
                 className="mobile-menu-button"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

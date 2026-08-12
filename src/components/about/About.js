@@ -9,12 +9,12 @@ import profileImage from '../../assets/images/image.l.webp';// Changed from './'
 const About = () => {
   const stats = [
     { icon: <Briefcase />, value: '3+', label: 'Years Experience' },
-    { icon: <Award />, value: '10+', label: 'Projects Completed' },
+    { icon: <Award />, value: '3+', label: 'Projects Completed' },
     { icon: <User />, value: '50%', label: 'Client Satisfaction' },
-    { icon: <GraduationCap />, value: '10+', label: 'Certifications' },
+    { icon: <GraduationCap />, value: '5+', label: 'Certifications' },
   ];
 
-  const skills = ['React', 'TypeScript', 'Node.js', 'Next.js', 'Tailwind CSS', 'MongoDB', 'AWS', 'Git'];
+  const skills = ['React', 'TypeScript', 'Node.js', 'Next.js', 'Tailwind CSS', 'MongoDB', 'AWS', 'Git','postgresql'];
 
   return (
     <section className="about-section" id="about">

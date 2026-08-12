@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Home.css';
 
 // Import the image
-import backgroundImage from '../../assets/images/image11.jpg';
+import backgroundImage from '../../assets/images/imagede.jfif';
 
 const Home = () => {
   const [isTextVisible, setIsTextVisible] = useState(true);
